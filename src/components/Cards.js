@@ -1,6 +1,9 @@
 import './Cards.css';
 
-function Cards({ pokemon }) {
+function Cards({ pokemon, loading }) {
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className='card-container'>
       {pokemon.map((poke) => {
