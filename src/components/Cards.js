@@ -14,18 +14,23 @@ function Cards({ pokemon }) {
             <article>
               <div className='front'>
                 <header>
-                  <h2>{name}</h2>
+                  <div className='text-name'>{name}</div>
                 </header>
                 <img src={poke.sprites.front_default} alt='Pokemon'></img>
-                <h3>{type}</h3>
+                <div className='text-info'>#{poke.id}</div>
+                <div className='text-info'>{type}</div>
               </div>
               <div className='back'>
                 <header>
-                  <h2>{name}</h2>
+                  <div className='text-name'>{name}</div>
                 </header>
                 <img src={poke.sprites.back_default} alt='Pokemon'></img>
-                <div>Height: {Math.round(poke.height / 4.41)} ft</div>
-                <div>Weight: {Math.floor(poke.weight / 4.41)} lbs</div>
+                <div className='text-info'>
+                  Height: {Math.round(poke.height / 4.41)} ft
+                </div>
+                <div className='text-info'>
+                  Weight: {Math.floor(poke.weight / 4.41)} lbs
+                </div>
               </div>
             </article>
           </label>
