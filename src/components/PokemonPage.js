@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Cards from './Cards';
 
 function PokemonPage() {
   const [pokemon, setPokemon] = useState([]);
@@ -38,19 +39,8 @@ function PokemonPage() {
   }, [url]);
 
   return (
-    <div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        pokemon.map((poke) => {
-          return (
-            <div key={poke.id}>
-              {poke.name}
-              <img src={poke.sprites.front_default} alt='Pokemon'></img>
-            </div>
-          );
-        })
-      )}
+    <div className='page-container'>
+      {loading ? <div>Loading...</div> : <Cards pokemon={pokemon} />}
       {prevUrl && (
         <button
           onClick={() => {
